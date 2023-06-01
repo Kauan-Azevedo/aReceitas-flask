@@ -14,6 +14,14 @@
 >
 > -   Versão: <span style="color: darkblue;font-weight: bold">1.1.12</span>
 
+É necessario usar o comando:
+
+```bash
+> poetry install
+```
+
+Para instalar as dependencias.
+
 Para iniciar a aplicação é só usar o seguinte comando:
 
 ```bash
