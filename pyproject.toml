@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "areceitas-flask"
+version = "0.1.0"
+description = "API para um site de receitas"
+authors = ["Kauan-Azevedo <kauanazevedo2010@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.3.2"
+Flask-SQLAlchemy = "^3.0.3"
+pymysql = "^1.0.3"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
