@@ -24,16 +24,18 @@ def create_user() -> tuple[Response, Literal[201]]:
 
 
 @user_blueprint.route("/users/<int:user_id>")
-def get_single_user(user_id: int) -> tuple[Response, Literal[404]] | Response:
+def get_single_user(user_id: int) -> tuple[Response, Literal[404]] | tuple[Response, Literal[201]]:
     user = User.query.get(user_id)
     if user is None:
-        return jsonify({"error": "User not found!"}), 404
-    return jsonify(user.serialize())
+        return jsonify({"error": True, "message": "Usuário não encontrado."}), 404
+    return jsonify(user.serialize()), 201
 
 
 @user_blueprint.route("/users/<int:user_id>", methods=["DELETE"])
-def delete_user(user_id) -> tuple[Response, Literal[200]]:
+def delete_user(user_id) -> tuple[Response, Literal[404]] | tuple[Response, Literal[200]]:
     user = User.query.get(user_id)
+    if user is None:
+        return jsonify({"error": True, "message": "Usuário não encontrado."}), 404
     db.session.delete(user)
     db.session.commit()
-    return jsonify({"success": "User deleted"}), 200
+    return jsonify({"success": True, "message": "User deleted"}), 200
