@@ -53,7 +53,7 @@ USE `aReceitas` ;
 CREATE TABLE IF NOT EXISTS `aReceitas`.`Usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(100) NOT NULL,
   `email` VARCHAR(300) NOT NULL,
   `cpf` VARCHAR(22) NOT NULL,
   PRIMARY KEY (`id`),

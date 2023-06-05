@@ -45,6 +45,18 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-login"
+version = "0.6.2"
+description = "User authentication and session management for Flask."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Flask = ">=1.0.4"
+Werkzeug = ">=1.0.1"
+
+[[package]]
 name = "flask-sqlalchemy"
 version = "3.0.3"
 description = "Add SQLAlchemy support to your Flask application."
@@ -181,13 +193,14 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "827a34915fdfea4d7f66c01f2a42a7a554bcc0b8f92e6e17d578138cb70018a7"
+content-hash = "064a3a6ecf0453924686098d54b9eeb7d32a1ee7f74e4981ecdb034a6442e3b1"
 
 [metadata.files]
 blinker = []
 click = []
 colorama = []
 flask = []
+flask-login = []
 flask-sqlalchemy = []
 greenlet = []
 itsdangerous = []
