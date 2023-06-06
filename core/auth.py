@@ -52,4 +52,4 @@ def login() -> Response:
 @login_required
 def logout():
     logout_user()
-    return jsonify({"success": False, "message": "Sessão encerrada com sucesso"})
+    return jsonify({"success": True, "message": "Sessão encerrada com sucesso"})
