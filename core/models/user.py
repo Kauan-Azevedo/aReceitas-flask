@@ -1,8 +1,10 @@
+
 from core.app import db
+from flask_login import UserMixin
 
 
-class User(db.Model):
-    __tablename__: str = "Usuario"
+class User(db.Model, UserMixin):
+    __tablename__ = "Usuario"
 
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(200), nullable=False)
@@ -14,9 +16,7 @@ class User(db.Model):
 
     def serialize(self):
         return {
-            'id': self.id,
             'nome': self.nome,
-            'senha': self.senha,
             'email': self.email,
             'cpf': self.cpf
         }
