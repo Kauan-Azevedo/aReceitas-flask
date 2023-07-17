@@ -39,6 +39,7 @@ def create_app() -> Flask:
     app.register_blueprint(recipe_blueprint)
     app.register_blueprint(auth_blueprint)
 
+    
     @app.route("/")
     def home() -> tuple[Response, Literal[200]]:
         return jsonify({"success": True, "message": "aReceitas API"}), 200
