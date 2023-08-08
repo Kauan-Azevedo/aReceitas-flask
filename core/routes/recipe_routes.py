@@ -2,7 +2,7 @@ from typing import Literal
 from flask import Blueprint, jsonify, request, Response
 from core.app import db
 from core.models.recipe import Recipe
-from flask_login import login_required, current_user
+from flask_login import login_required
 
 recipe_blueprint = Blueprint('recipe', __name__)
 
