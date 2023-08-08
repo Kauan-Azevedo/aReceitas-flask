@@ -1,5 +1,5 @@
 from typing import Literal
-from flask import Blueprint, jsonify, Response, request
+from flask import Blueprint, jsonify, Response
 from core.app import db
 from core.models.user import User
 from flask_login import login_required, current_user

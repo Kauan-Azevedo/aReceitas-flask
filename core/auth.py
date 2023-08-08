@@ -2,7 +2,7 @@ from flask import Blueprint, Response, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from core.models.user import User
 from core.app import db
-from flask_login import login_required, logout_user
+from flask_login import login_required, logout_user, login_user
 
 
 auth_blueprint = Blueprint('auth', __name__)
@@ -40,8 +40,6 @@ def login() -> Response:
     user = User.query.filter_by(email=email).first()
     if not user or not check_password_hash(user.senha, senha):
         return jsonify({"error": True, "message": "Usuário não existente"})
-
-    from flask_login import login_user
 
     login_user(user, remember=True)
 
