@@ -16,15 +16,6 @@ def all_users() -> Response:  # type: ignore
     return jsonify([user.serialize() for user in users])
 
 
-# def create_user() -> tuple[Response, Literal[201]]:
-#     data = request.get_json()
-#     new_user = User(nome=data['nome'], senha=data['senha'],
-#                     email=data['email'], cpf=data['cpf'])
-#     db.session.add(new_user)
-#     db.session.commit()
-#     return jsonify(new_user.serialize()), 201
-
-
 @user_blueprint.route("/users/<int:user_id>")
 @login_required
 def get_single_user(user_id: int) -> tuple[Response, Literal[404]] | tuple[Response, Literal[201]]:

@@ -25,7 +25,7 @@ def send_recipe() -> tuple[Response, Literal[201]]:
     return jsonify(new_recipe.serialize()), 201
 
 
-@recipe_blueprint.route("/recipes/<int:recipe_id>")
+@recipe_blueprint.route("/recipes/<int:recipe_id>", methods=["POST"])
 @login_required
 def get_single_recipe(recipe_id) -> tuple[Response, Literal[404]] | tuple[Response, Literal[201]]:
     recipe: Recipe = Recipe.query.get(recipe_id)
